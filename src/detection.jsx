@@ -40,9 +40,9 @@ function PoseDetection() {
     detector.estimatePoses(video).then((item) => {
       [0, 1, 2, 3, 4].map((index) =>
         item.map((value) => {
-            ctx.fillStyle = "teal";
-            ctx.strokeStyle = "white"
-            ctx.lineWidth = "3"
+          ctx.fillStyle = "teal";
+          ctx.strokeStyle = "white";
+          ctx.lineWidth = "3";
           const diffX =
             value.keypoints[index].x - idealDetection[0].keypoints[index].x;
           const diffY =
@@ -61,7 +61,6 @@ function PoseDetection() {
             notify = notify + 1;
             if (notify % 20 == 0) {
               audio.play();
-              console.log("posture", Math.abs(diffX), Math.abs(diffY));
             }
           }
         })
