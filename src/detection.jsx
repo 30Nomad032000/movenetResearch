@@ -84,7 +84,7 @@ function PoseDetection() {
       }, 3000);
 
       setTimeout(() => {
-        interval = setInterval(() => runModel(), 10);
+        interval = setInterval(() => runModel(), 100);
       }, 3500);
     }
     return () => {
