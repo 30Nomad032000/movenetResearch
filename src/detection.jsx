@@ -13,7 +13,9 @@ const detectorConfig = {
   trackerType: poseDetection.TrackerType.BoundingBox,
 };
 
-
+const detector = await poseDetection.createDetector(
+  poseDetection.SupportedModels.MoveNet
+);
 
 function PoseDetection() {
   const [webcam, setWebCam] = useState(false);
@@ -23,8 +25,6 @@ function PoseDetection() {
   let idealDetection = null;
   let notify = 0;
 
-    
-    
   const runModel = () => {
     detect(detector, detectorConfig);
   };
